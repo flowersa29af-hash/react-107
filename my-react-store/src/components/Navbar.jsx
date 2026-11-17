@@ -4,10 +4,19 @@ import "./Navbar.css";
 //Logic section
 function Navbar() {
     return (
-       <div>
-            <h5>My Online Store</h5>
-       </div>
+        <nav className="navbar">
+            <div className="navbar-container">
+                <div className="navbar-brand">
+                    <h2>My Online Store</h2>
+                </div>
+                <ul className="navbar-nav">
+                    <li><a href="#home" className="nav-link">Home</a></li>
+                    <li><a href="#catalog" className="nav-link">Catalog</a></li>
+                    <li><a href="#about" className="nav-link">About</a></li>
+                </ul>
+            </div>
+        </nav> 
     );
 }
-//export section
+//export sectionS
 export default Navbar;
