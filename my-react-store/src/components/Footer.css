@@ -1,7 +1,12 @@
 .footer {
   background-color: var(--color-text);
   color: #ffffff;
-  padding: var(--space-lg) var(--space-md);
+  padding: var(--space-md);
+
+  /* Pin the footer to the bottom of the screen so it's always visible */
+  position: sticky;
+  bottom: 0;
+  z-index: 100;
 }
 
 .footer-container {
