@@ -10,7 +10,7 @@ function QuantityPicker(props) {
         let prevVal = quantity - 1;
         if (quantity > 1) {
             setQuantity(prevVal);
-            props.onChange(prevVal); // tell the Product about the new quantity
+            props.onChange(prevVal); // tell the Product about the new quantity, parent
         }
     }
 
@@ -19,7 +19,7 @@ function QuantityPicker(props) {
         let nextVal = quantity + 1;
         // Update the state with the new value
         setQuantity(nextVal);
-        props.onChange(nextVal); // tell the Product about the new quantity
+        props.onChange(nextVal); // tell the Product about the new quantity,parent
 
     }
 
