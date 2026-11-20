@@ -1,4 +1,5 @@
 // import
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 //Logic section
@@ -10,13 +11,14 @@ function Navbar() {
                     <h2>My Online Store</h2>
                 </div>
                 <ul className="navbar-nav">
-                    <li><a href="#home" className="nav-link">Home</a></li>
-                    <li><a href="#catalog" className="nav-link">Catalog</a></li>
-                    <li><a href="#about" className="nav-link">About</a></li>
+                    <li><NavLink to="/" end className="nav-link">Home</NavLink></li>
+                    <li><NavLink to="/catalog" className="nav-link">Catalog</NavLink></li>
+                    <li><NavLink to="/about" className="nav-link">About</NavLink></li>
+                    <li><NavLink to="/contact" className="nav-link">Contact</NavLink></li>
                 </ul>
             </div>
-        </nav> 
+        </nav>
     );
 }
-//export sectionS
+//export section
 export default Navbar;

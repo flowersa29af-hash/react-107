@@ -8,9 +8,17 @@
   position: sticky;
   top: 0;
   z-index: 100;
+
+  /* Bootstrap colors navbar text dark by default; keep it white on our blue bar */
+  --bs-navbar-color: #ffffff;
+  --bs-navbar-hover-color: #ffffff;
+  --bs-navbar-active-color: #ffffff;
+  --bs-navbar-brand-color: #ffffff;
+  --bs-navbar-brand-hover-color: #ffffff;
 }
 
 .navbar-container {
+  width: 100%; /* Bootstrap's .navbar is a flex row, so stretch to fill it */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,6 +36,7 @@
 .navbar-nav {
   list-style: none;
   display: flex;
+  flex-direction: row; /* Bootstrap's .navbar-nav stacks links vertically by default */
   gap: var(--space-md);
   margin: 0;
   padding: 0;
@@ -42,6 +51,21 @@
 }
 
 .nav-link:hover,
-.nav-link:focus-visible {
+.nav-link:focus-visible,
+.nav-link.active {
   background-color: var(--color-primary-dark);
+}
+
+/* ---- Small screens: stack the brand above the links ---- */
+@media (max-width: 576px) {
+  .navbar-container {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .navbar-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
 }

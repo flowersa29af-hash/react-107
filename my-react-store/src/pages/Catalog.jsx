@@ -5,8 +5,6 @@ import { useState, useEffect } from "react";
 
 function Catalog() {
     const [products, setProducts] = useState([]);
-    // const produts = []
-    const [cart, setCart]= useState([]); // cart is an array of products, each product has a quantity
 
     useEffect(() => {
         const service = new DataService();
