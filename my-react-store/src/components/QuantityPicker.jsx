@@ -1,32 +1,24 @@
 import "./QuantityPicker.css";
-import { useState } from "react";
 
+// The parent (Product) owns the quantity; this component only displays it
+// and reports changes back through props.onChange.
 function QuantityPicker(props) {
-    const [quantity, setQuantity] = useState(1);
-    //      name       function             initial value
+    const quantity = props.value;
 
     function handleDecrease() {
-        // Logic to decrease quantity
-        let prevVal = quantity - 1;
         if (quantity > 1) {
-            setQuantity(prevVal);
-            props.onChange(prevVal); // tell the Product about the new quantity, parent
+            props.onChange(quantity - 1);
         }
     }
 
     function handleIncrease() {
-        // Logic to increase quantity
-        let nextVal = quantity + 1;
-        // Update the state with the new value
-        setQuantity(nextVal);
-        props.onChange(nextVal); // tell the Product about the new quantity,parent
-
+        props.onChange(quantity + 1);
     }
 
     return (
         <div className="quantity-picker">
-            <button className="btn-minus" onClick={handleDecrease}>-</button>
-            <label className="label-qty">{quantity}</label>
+            <button className="btn-minus" onClick={handleDecrease} disabled={quantity === 1}>-</button>
+            <span className="label-qty">{quantity}</span>
             <button className="btn-plus" onClick={handleIncrease}>+</button>
         </div>
     )

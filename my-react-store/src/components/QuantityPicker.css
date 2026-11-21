@@ -32,3 +32,11 @@
   font-weight: bold;
   text-align: center;
 }
+
+/* Faded, non-clickable look when the button is disabled */
+.btn-minus:disabled,
+.btn-minus:disabled:hover {
+  opacity: 0.4;
+  cursor: not-allowed;
+  background-color: var(--color-primary);
+}

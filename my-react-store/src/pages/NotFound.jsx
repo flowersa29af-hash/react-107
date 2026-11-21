@@ -7,7 +7,7 @@ function NotFound() {
             <p className="lead text-secondary">Sorry, the page you are looking for does not exist.</p>
             <Link className="btn btn-dark btn-lg" to="/">Go Back Home</Link>
         </div>
-    )
+    );
 }
 
 export default NotFound;

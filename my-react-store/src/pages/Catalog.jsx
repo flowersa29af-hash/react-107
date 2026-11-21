@@ -1,19 +1,11 @@
 import Product from "../components/Product";
-import DataService from "../dataServices/dataService";
+import DataService from "../services/dataService";
 import "./Catalog.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 function Catalog() {
-    const [products, setProducts] = useState([]);
-
-    useEffect(() => {
-        const service = new DataService();
-        const data = service.getProducts();
-        setProducts(data);
-        //setProducts(service.getProducts());
-    }, []); // empty array = load only once
-    // const produce 
-    
+    // load the products once, when the component is first created
+    const [products] = useState(() => new DataService().getProducts());
 
     return (
         <div className="catalog">
