@@ -17,3 +17,8 @@
   margin: 0;
   font-size: 1.1rem;
 }
+
+.product .total {
+  font-weight: bold;
+  color: var(--color-primary-dark);
+}

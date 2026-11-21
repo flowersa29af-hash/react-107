@@ -17,7 +17,7 @@ function Product(props) {
             <img src={`/images/${props.data.image}`} alt={props.data.title} />
             <h5>{props.data.title}</h5>
             <label>Price: ${props.data.price.toFixed(2)}</label>
-            <label>Total: ${total.toFixed(2)}</label>
+            <label className="total">Total: ${total.toFixed(2)}</label>
             <QuantityPicker onChange={handleQtyChange} />
         </div>
     )
